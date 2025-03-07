@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanitian Tourism</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="img/logo.jpg" alt="Tanitian Tourism">
+        <div>
+            <h1>Tanitian Tourism</h1>
+        </div>
+        <div class="language-selection">
+            <select id="language">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="jp">日本語</option>
+            </select>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="accommodations.html">Accomodations</a></li>
+            <li><a href="attractions.html">Attractions</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="contact.html">Contact</a></li>    
+        </ul>
+        <form id="searchForm" onsubmit="searchSite(event)">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search accomodations & activities">
+                <button type="button" onclick="searchSite(event)" class="search-button"></button>
+            </div>
+        </form>
+    </nav>
+
+    <main>
+        <div class="left-content">
+            <section>
+                <h2>Welcome</h2>
+                <h2>Welcome to Taniti – Your Next Island Adventure! 🌴</h2>
+                <p>Discover the perfect blend of adventure, relaxation, and culture on the beautiful island of Taniti.</p>
+                
+                <ul>
+                    <li><strong>Stunning Landscapes:</strong> Sandy beaches, lush rainforests, and an active volcano.</li>
+                    <li><strong>Exciting Activities:</strong> Snorkeling, zip-lining, hiking, and guided tours.</li>
+                    <li><strong>Delicious Cuisine:</strong> Fresh seafood, Pan-Asian dishes, and American-style meals.</li>
+                    <li><strong>Easy Transportation:</strong> Public buses, taxis, car rentals, and bike-friendly streets.</li>
+                    <li><strong>Comfortable Stays:</strong> Choose from luxury resorts, cozy B&Bs, or budget-friendly hostels.</li>
+                </ul>
+
+                
+            </section>
+            <table class="info-cards">
+                <tr>
+                    <td colspan="3">
+                        <h2>Featured Attractions</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/beach.jpg" alt="Beach">    
+                    </td>
+                    <td>
+                        <img src="img/rainforest.jpg" alt="Rainforest">
+                    </td>
+                    <td>
+                        <img src="img/volcano.jpg" alt="volcano">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>White Sand Beach</h3>    
+                    </td>
+                    <td>
+                        <h3>Rainforest Hike</h3>
+                    </td>
+                    <td>
+                        <h3>Active Volcano Tour</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </td>
+                    <td>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </td>
+                    <td>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <h2 class="lblTrip">Plan your perfect getaway and explore Taniti today!</h2>
+                        <button id="plan-trip">Plan Your Trip</button>
+                    </td>
+                </tr>
+            </table>    
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@tanitiantourism.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 123 Tanitian Street, Beautiful City, USA</p>
+            </div>
+            <div class="footer-section">
+                <div class="language-selection">
+                    <label for="language">Select Language:</label>
+                    <select id="language">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="jp">日本語</option>
+                    </select>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Social Media Links</h3>
+                <p>Follow us for pet care tips and updates:</p>
+                <a href="#"><img src="img/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="img/twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="img/instagram-icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p>Images provided by <a href="https://unsplash.com" id="unplash_footer" target="_blank" rel="noopener noreferrer">Unsplash</a>.</p>
+            <p>&copy; 2025 Tanitian Tourism</p>    
+        </div>
+    </footer>
+    <div id="trip-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Plan Your Trip</h2>
+            <form id="trip-form">
+                <label for="destination">Preferred Destination:</label>
+                <select id="destination">
+                    <option value="beach">Beaches</option>
+                    <option value="rainforest">Rainforest</option>
+                    <option value="volcano">Volcano</option>
+                </select>
+                <label for="travel-date">Travel Date:</label>
+                <input type="date" id="travel-date" required>
+                <label for="accommodation">Accommodation Type:</label>
+                <select id="accommodation">
+                    <option value="hotel">Hotel</option>
+                    <option value="bnb">Bed & Breakfast</option>
+                    <option value="resort">Resort</option>
+                </select>
+                <button type="submit" id="btnmodal">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+        document.getElementById("plan-trip").addEventListener("click", function() {
+            document.getElementById("trip-modal").style.display = "block";
+        });
+
+        document.querySelector(".close").addEventListener("click", function() {
+            document.getElementById("trip-modal").style.display = "none";
+        });
+
+        document.getElementById("trip-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Your trip has been planned! We will send you details soon.");
+            document.getElementById("trip-modal").style.display = "none";
+        });
+    </script>
+</body>
+</html>
