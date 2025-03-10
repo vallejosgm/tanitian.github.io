@@ -67,8 +67,16 @@
                 <option value="breakfast">Free Breakfast</option>
                 <option value="beach">Beach Access</option>
                 <option value="spa">Spa & Wellness</option>
-            </select>ß
+            </select>
         </section>
+
+        <!-- Accommodations List -->
+        <section class="accommodation-list" id="accommodation-list"></section>
+
+
+
+
+
     </main>
     <table class="info-cards">
         <tr>
@@ -183,6 +191,71 @@
         </div>
     </div>
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const accommodations = [
+                { id: 1, name: "Beachside Resort", type: "resort", price: "high", amenities: ["pool", "wifi", "spa"], image: "img/beachsideresort.jpg" },
+                { id: 2, name: "Downtown Hotel", type: "hotel", price: "mid", amenities: ["wifi", "breakfast"], image: "img/downtownhotel.jpg" },
+                { id: 3, name: "Cozy B&B", type: "bnb", price: "low", amenities: ["breakfast"], image: "img/cozybb.jpg" },
+                { id: 4, name: "Luxury Private Villa", type: "villa", price: "high", amenities: ["pool", "spa", "wifi"], image: "img/luxuryprivatevilla.jpg" },
+                { id: 5, name: "Backpackers Hostel", type: "hostel", price: "low", amenities: ["wifi"], image: "img/backpackershostel.jpg" },
+                { id: 6, name: "Seaside Hotel", type: "hotel", price: "mid", amenities: ["wifi", "beach"], image: "img/seasidehotel.jpg" }
+            ];
+
+            const typeFilter = document.getElementById("accommodation-type");
+            const priceFilter = document.getElementById("price-range");
+            const amenitiesFilter = document.getElementById("amenities");
+            const accommodationList = document.getElementById("accommodation-list");
+
+            function renderAccommodations(filteredAccommodations) {
+                accommodationList.innerHTML = "";
+                if (filteredAccommodations.length === 0) {
+                    accommodationList.innerHTML = "<p>No accommodations found.</p>";
+                    return;
+                }
+
+                filteredAccommodations.forEach(acc => {
+                    const accommodationElement = document.createElement("div");
+                    accommodationElement.classList.add("accommodation");
+                    accommodationElement.innerHTML = `
+                        <img src="${acc.image}" alt="${acc.name}">
+                        <h4>${acc.name}</h4>
+                        <p>Type: ${acc.type.charAt(0).toUpperCase() + acc.type.slice(1)}</p>
+                        <p>Price: ${acc.price === "low" ? "$ - Budget" : acc.price === "mid" ? "$$ - Mid-Range" : "$$$ - Luxury"}</p>
+                        <p>Amenities: ${acc.amenities.map(a => a.replace("-", " ")).join(", ")}</p>
+                        <button class="book-btn" onclick="bookAccommodation('${acc.name}')">Book Now</button>
+                    `;
+                    accommodationList.appendChild(accommodationElement);
+                });
+            }
+
+            function filterAccommodations() {
+                const selectedType = typeFilter.value;
+                const selectedPrice = priceFilter.value;
+                const selectedAmenity = amenitiesFilter.value;
+
+                const filtered = accommodations.filter(acc => {
+                    const typeMatch = selectedType === "all" || acc.type === selectedType;
+                    const priceMatch = selectedPrice === "all" || acc.price === selectedPrice;
+                    const amenityMatch = selectedAmenity === "all" || acc.amenities.includes(selectedAmenity);
+                    return typeMatch && priceMatch && amenityMatch;
+                });
+
+                renderAccommodations(filtered);
+            }
+
+            window.bookAccommodation = function(name) {
+                alert(`You have successfully booked: ${name}`);
+            };
+
+            typeFilter.addEventListener("change", filterAccommodations);
+            priceFilter.addEventListener("change", filterAccommodations);
+            amenitiesFilter.addEventListener("change", filterAccommodations);
+
+            renderAccommodations(accommodations);
+        });
+
+    </script>
     <script>
         document.getElementById("plan-trip").addEventListener("click", function() {
             document.getElementById("trip-modal").style.display = "block";
