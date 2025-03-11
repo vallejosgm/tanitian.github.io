@@ -261,6 +261,17 @@ main section h2 {
     color: #e2675b;
 }
 
+.book-now, .btnmodal-submit {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 12px;
+    background-color: #f4cf51;
+    color: #007BFF;
+    border-color: #007BFF;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 #plan-trip {
     margin-top: 10px;
     padding: 10px 20px;

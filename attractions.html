@@ -105,6 +105,7 @@
             </td>
             <td>
                 <p>Soar through the rainforest canopy on thrilling zip-line courses.</p>
+                <button class="book-now" onclick="bookActivity('ziplining')">Book Now</button>
             </td>
             <td>
                 <p>Enjoy deep-sea fishing and catch some of the best fish in the Pacific.</p>
@@ -174,6 +175,19 @@
             </form>
         </div>
     </div>
+    <div id="activity-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="activity-title">Book Your Adventure</h2>
+            <p id="activity-description">Experience an unforgettable adventure in Taniti.</p>
+            <form id="activity-form">
+                <label for="activity-date">Select a Date:</label>
+                <input type="date" id="activity-date" required>
+                <button class="btnmodal-submit" type="submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
     <script>
         document.getElementById("plan-trip").addEventListener("click", function() {
@@ -190,5 +204,33 @@
             document.getElementById("trip-modal").style.display = "none";
         });
     </script>
+    <script>
+        // Abrir modal con la actividad seleccionada
+        function bookActivity(activity) {
+            const modal = document.getElementById("activity-modal");
+            const title = document.getElementById("activity-title");
+            const description = document.getElementById("activity-description");
+
+            if (activity === "ziplining") {
+                title.textContent = "Book Your Zip-lining Adventure";
+                description.textContent = "Soar through the rainforest canopy on thrilling zip-line courses. Select a date and confirm your booking!";
+            }
+            
+            modal.style.display = "block";
+        }
+
+        // Cerrar modal
+        document.querySelector(".close").addEventListener("click", function () {
+            document.getElementById("activity-modal").style.display = "none";
+        });
+
+        // Simulación de reserva
+        document.getElementById("activity-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Your adventure has been booked! We will send you details soon.");
+            document.getElementById("activity-modal").style.display = "none";
+        });
+    </script>
+
 </body>
 </html>
