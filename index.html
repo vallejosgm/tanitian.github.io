@@ -13,7 +13,7 @@
             <h1>Tanitian Tourism</h1>
         </div>
         <div class="language-selection">
-            <select id="language">
+            <select id="language-header">
                 <option value="en">English</option>
                 <option value="es">Español</option>
                 <option value="fr">Français</option>
@@ -41,7 +41,6 @@
     <main>
         <div class="left-content">
             <section>
-                <h2>Welcome</h2>
                 <h2>Welcome to Taniti – Your Next Island Adventure! 🌴</h2>
                 <p>Discover the perfect blend of adventure, relaxation, and culture on the beautiful island of Taniti.</p>
                 
@@ -130,8 +129,8 @@
             </div>
             <div class="footer-section">
                 <div class="language-selection">
-                    <label for="language">Select Language:</label>
-                    <select id="language">
+                    <label for="language-footer">Select Language:</label>
+                    <select id="language-footer">
                         <option value="en">English</option>
                         <option value="es">Español</option>
                         <option value="fr">Français</option>
@@ -176,6 +175,7 @@
         </div>
     </div>
     <script src="js/script.js"></script>
+    <script src="js/language.js"></script>
     <script>
         document.getElementById("plan-trip").addEventListener("click", function() {
             document.getElementById("trip-modal").style.display = "block";
