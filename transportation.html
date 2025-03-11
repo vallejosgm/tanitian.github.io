@@ -31,6 +31,7 @@
     </nav>
 
     <main>
+        <input type="text" id="searchTransport" onkeyup="filterTransport()" placeholder="Search bus routes or taxi info... For example: 'airport', 'taxi', 'downtown', etc">
         <section class="transportation-intro">
             <h2>Explore Taniti with Ease</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -69,16 +70,41 @@
             <td>
                 <p>Taniti offers a reliable and affordable transportation system for visitors.  
         Public buses connect **Taniti City, Merriton Landing, and major tourist spots**,  
-        while taxis and bike rentals provide flexible options for getting around.</p>
+        while taxis and bike rentals provide flexible options for getting around...</p>
                 <button class="view-more-btn" onclick="toggleDetails('bus-details', this)">View More</button>
-                <div id="bus-details" class="extra-info">
+                <section id="bus-details" class="extra-info">
+                    <h3>🚌 Bus Schedules</h3>
+                    <table class="transport-table">
+                        <tr>
+                            <th>Route</th>
+                            <th>Departure Times</th>
+                            <th>Fare</th>
+                        </tr>
+                        <tr>
+                            <td>Taniti City → Merriton Landing</td>
+                            <td>6:00 AM, 9:00 AM, 12:00 PM, 3:00 PM, 6:00 PM</td>
+                            <td>$2 per trip</td>
+                        </tr>
+                        <tr>
+                            <td>Airport → Downtown Taniti</td>
+                            <td>Every 30 min from 5:00 AM to 11:00 PM</td>
+                            <td>$3 per trip</td>
+                        </tr>
+                        <tr>
+                            <td>Tourist Spots Express</td>
+                            <td>Hourly from 7:00 AM to 10:00 PM</td>
+                            <td>$5 for a day pass</td>
+                        </tr>
+                    </table>
+
+                    <h3>🚖 Taxi Availability</h3>
                     <ul>
-                        <li><strong>Bus Routes:</strong> Covering major tourist spots, with express and local options.</li>
-                        <li><strong>Fares:</strong> One-way ticket: $2, Day pass: $5.</li>
-                        <li><strong>Taxi Fares:</strong> Starting at $3, with additional charges per mile.</li>
-                        <li><strong>Bike Rentals:</strong> Daily rental starts at **$10**, including helmet (required by law).</li>
+                        <li>📍 Taxi stands available at airport, bus stations, and major hotels.</li>
+                        <li>💰 Fares start at **$3 base fare** + **$1.50 per mile**.</li>
+                        <li>📱 Ride-hailing apps available: **Taniti Cabs, GoTaniti**.</li>
+                        <li>☎️ Call **(123) 456-7890** to book a taxi in advance.</li>
                     </ul>
-                </div>
+                </section>
             </td>
             <td>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -176,5 +202,33 @@
             document.getElementById("trip-modal").style.display = "none";
         });
     </script>
+    <script>
+        function filterTransport() {
+
+            let input = document.getElementById("searchTransport").value.toLowerCase();
+            let extraInfo = document.getElementById("bus-details");
+            let viewMoreBtn = document.querySelector(".view-more-btn");
+
+            // Mostrar la sección si está oculta
+            if (extraInfo.style.display === "none" || extraInfo.style.display === "") {
+                extraInfo.style.display = "block";
+                viewMoreBtn.textContent = "View Less";
+            }
+
+            let table = document.querySelector(".transport-table");
+            let rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                let route = rows[i].getElementsByTagName("td")[0].textContent.toLowerCase();
+                let times = rows[i].getElementsByTagName("td")[1].textContent.toLowerCase();
+                if (route.includes(input) || times.includes(input)) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
 </body>
 </html>
