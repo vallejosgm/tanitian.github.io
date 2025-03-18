@@ -479,6 +479,10 @@ header .language-selection {
         display: none;
     }
 
+    nav .language-selection {
+        display: none;
+    }
+
     /* Asegurar que la selección de idioma sea visible */
     header .language-selection {
         display: block;
