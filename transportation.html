@@ -71,7 +71,7 @@
                 <p>Taniti offers a reliable and affordable transportation system for visitors.  
         Public buses connect **Taniti City, Merriton Landing, and major tourist spots**,  
         while taxis and bike rentals provide flexible options for getting around...</p>
-                <button class="view-more-btn" onclick="toggleDetails('bus-details', this)">View More</button>
+                <button class="view-more-btn" onclick="toggleDetails('bus-details', 'Bus Details', this)">View More about Bus Details</button>
                 <section id="bus-details" class="extra-info">
                     <h3>🚌 Bus Schedules</h3>
                     <table class="transport-table">
@@ -96,7 +96,9 @@
                             <td>$5 for a day pass</td>
                         </tr>
                     </table>
-
+                </section>
+                <button class="view-more-btn" onclick="toggleDetails('tax-details', 'Tax Details', this)">View More about Tax Details</button>
+                <section id="tax-details" class="extra-info">
                     <h3>🚖 Taxi Availability</h3>
                     <ul>
                         <li>📍 Taxi stands available at airport, bus stations, and major hotels.</li>

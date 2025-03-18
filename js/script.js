@@ -57,13 +57,13 @@ function searchSite(event) {
     }
 }
 
-function toggleDetails(id, button) {
+function toggleDetails(id, text, button) {
     var details = document.getElementById(id);
     if (details.style.display === "none" || details.style.display === "") {
         details.style.display = "block";
-        button.textContent = "View Less";
+        button.textContent = "View Less about " + text;
     } else {
         details.style.display = "none";
-        button.textContent = "View More";
+        button.textContent = "View More about " + text;
     }
 }
